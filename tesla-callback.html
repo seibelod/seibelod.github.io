@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meine Wohnung – Tesla</title>
+<style>
+  body { font-family: -apple-system, system-ui, sans-serif; display: grid; place-items: center;
+         min-height: 100vh; margin: 0; background: #f2f2f7; color: #1c1c1e; text-align: center; }
+  a { display: inline-block; margin-top: 16px; padding: 12px 22px; border-radius: 12px;
+      background: #0a84ff; color: #fff; text-decoration: none; font-weight: 600; }
+</style>
+</head>
+<body>
+<div>
+  <p>Anmeldung abgeschlossen – zurück zur App …</p>
+  <a id="back" href="#">Zur App „Meine Wohnung“</a>
+</div>
+<script>
+  // Passes the Tesla login result (code + state) on to the app.
+  var target = "meinewohnung://tesla-callback" + window.location.search;
+  document.getElementById("back").href = target;
+  window.location.replace(target);
+</script>
+</body>
+</html>
